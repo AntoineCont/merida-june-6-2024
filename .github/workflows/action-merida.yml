@@ -30,7 +30,7 @@ jobs:
 
       - name: crear tabla input
         run: |
-          cat from-url-all.csv > companies-all.csv    
+          cat companies_all.csv > companies_all.csv    
 
       - name: crear tablas por pais
         run: |
