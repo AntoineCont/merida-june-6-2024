@@ -28,10 +28,6 @@ jobs:
             exit 1
           fi
 
-      - name: crear tabla input
-        run: |
-          cat all-data.csv > companies_all.csv    
-
       - name: crear tablas por pais
         run: |
           grep -i Germany companies_all.csv > companies_germany.csv
@@ -57,7 +53,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: refrescar
-        run:
+        run: |
           git fetch
           git pull
 
