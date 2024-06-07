@@ -22,11 +22,12 @@ jobs:
 
       - name: descargar data
         run: |
-          curl -sL "https://companiesmarketcap.com/alcoholic-beverages/largest-alcoholic-beverage-companies-by-market-cap/?download=csv" -o companies_all.csv
-          if [ ! -s companies_all.csv ]; then
+          curl -sL "https://companiesmarketcap.com/alcoholic-beverages/largest-alcoholic-beverage-companies-by-market-cap/?download=csv" -o companies-all.csv
+          if [ ! -s companies-all.csv ]; then
             echo "Downloaded CSV file is empty"
             exit 1
           fi
+
       - name: commit output
         if: always()
         run: |
