@@ -56,7 +56,7 @@ jobs:
   
   viendo_uk:
     needs: analizando_datos
-    runs-on: linux-ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
