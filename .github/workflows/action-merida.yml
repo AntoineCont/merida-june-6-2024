@@ -44,6 +44,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: action/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
 
       - name: imprimir tabla bruta y neta
         run:
