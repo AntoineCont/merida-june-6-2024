@@ -63,6 +63,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: refrescar
+        run:
+          git fetch
+          git pull
 
       - name: imprimir tabla bruta y neta
         run: |
@@ -78,6 +82,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: refrescar
+        run:
+          git fetch
+          git pull
 
       - name: imprimir tabla bruta y neta
         run: |
