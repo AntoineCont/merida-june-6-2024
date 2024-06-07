@@ -43,7 +43,7 @@ jobs:
     runs-on: macos-12 #maquina en la que va a correr
     steps:
       - name: Checkout code
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
       
       - name: Set up Python
         uses: actions/setup-python@v5
