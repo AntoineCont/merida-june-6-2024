@@ -28,6 +28,10 @@ jobs:
             exit 1
           fi
 
+      - name: crear tabla input
+        run: |
+          cat from-url-all.csv > companies-all.csv    
+
       - name: crear tablas por pais
         run: |
           grep -i Germany companies_all.csv > companies_germany.csv
@@ -44,6 +48,7 @@ jobs:
           git stash list | grep "stash@{0}" && git stash apply
           git add companies*.csv
           git diff --cached --exit-code || git commit -m "tabla actualizada" --allow-empty
+          git push --force-with-lease origin HEAD:main
  
   viendo_eu: # nombre del job
     needs: analizando_datos # job(s) de los que depende
