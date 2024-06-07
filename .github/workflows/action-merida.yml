@@ -38,14 +38,14 @@ jobs:
           git add .
           git diff --cached --exit-code || git commit -m "tabla actualizada" --allow-empty
           git push --force-with-lease origin HEAD:main
-          
+
       - name: crear tablas por pais
         run: |
           grep -i Germany companies-all.csv  > companies_germany.csv
           grep -i Kingdom companies-all.csv  > companies_united_kingdom.csv
           grep -i France companies-all.csv  > companies_france.csv
 
-      - name: Commitresults
+      - name: Commit results
         if: always()
         run: |
           git config --local user.email "action@github.com"
