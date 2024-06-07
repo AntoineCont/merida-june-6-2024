@@ -23,7 +23,7 @@ jobs:
       - name: descargar data
         run: |
           curl -sL "https://companiesmarketcap.com/alcoholic-beverages/largest-alcoholic-beverage-companies-by-market-cap/?download=csv" -o all-data.csv
-          if [ ! -s companies_all.csv ]; then
+          if [ ! -s all-data.csv ]; then
             echo "Downloaded CSV file is empty"
             exit 1
           fi
