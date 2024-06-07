@@ -42,9 +42,9 @@ jobs:
 
       - name: crear tablas por pais
         run: |
-          grep -i Italy companies-all.csv  > companies_germany.csv
-          grep -i China companies-all.csv  > companies_united_kingdom.csv
-          grep -i France companies-all.csv  > companies_france.csv
+          grep -i Germany companies-all.csv  > companies-germany.csv
+          grep -i Kingdom companies-all.csv  > companies-united_kingdom.csv
+          grep -i France companies-all.csv  > companies-france.csv
 
       - name: Commit results
         if: always()
@@ -67,10 +67,10 @@ jobs:
       - name: imprimir tabla bruta y neta
         run: |
           echo "tabla desde Empresas Francesas"
-          cat companies_france.csv
+          cat companies-france.csv
           echo
           echo "tabla desde Empresas Germanas"
-          cat companies_germany.csv
+          cat companies-germany.csv
 
   viendo_uk: # nombre del job
     needs: analizando_datos # job(s) de los que depende
@@ -82,4 +82,4 @@ jobs:
       - name: imprimir tabla bruta y neta
         run: |
           echo "tabla desde Empreses Inglesas"
-          cat companies_united_kingdom.csv
+          cat companies-united-kingdom.csv
