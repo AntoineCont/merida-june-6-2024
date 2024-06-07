@@ -22,7 +22,7 @@ jobs:
 
       - name: descargar data
         run: |
-          curl -sL "https://companiesmarketcap.com/alcoholic-beverages/largest-alcoholic-beverage-companies-by-market-cap/?download=csv" -o companies_all.csv
+          curl -sL "https://companiesmarketcap.com/alcoholic-beverages/largest-alcoholic-beverage-companies-by-market-cap/?download=csv" -o all-data.csv
           if [ ! -s companies_all.csv ]; then
             echo "Downloaded CSV file is empty"
             exit 1
@@ -30,7 +30,7 @@ jobs:
 
       - name: crear tabla input
         run: |
-          cat companies_all.csv > companies_all.csv    
+          all-data.csv > companies_all.csv    
 
       - name: crear tablas por pais
         run: |
