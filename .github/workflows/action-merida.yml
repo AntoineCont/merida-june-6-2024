@@ -37,3 +37,31 @@ jobs:
           git add .
           git diff --cached --exit-code || git commit -m "tabla actualizada" --allow-empty
           git push --force-with-lease origin HEAD:main
+
+  viendo_datos: #nombre del job
+    needs: analizando_datos #requisitos para correr
+    runs-on: macos-12 #maquina en la que va a correr
+    steps:
+      - name: Checkout code
+        uses: action/checkout@v4
+
+      - name: imprimir tabla bruta y neta
+        run:
+          echo "tabla de empresa francesa"
+          cat companies_france.csv
+          echo "tabla de empresa germanas"
+          cat companies_germany.csv
+          echo "tabla de empresa inglesas"
+          cat companies_unites_kingdom.csv
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git diff --quiet || git stash
+          git pull --rebase origin main
+          git stash list | grep "stash@{0}" && git stash apply
+          git add .
+          git diff --cached --exit-code || git commit -m "tabla actualizada" --allow-empty
+          git push --force-with-lease origin HEAD:main
