@@ -45,7 +45,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: imprimir tabla bruta y neta
+      - name: imprimir tabla de paises
         run:
           echo "tabla de empresa francesa"
           cat companies_france.csv
@@ -61,7 +61,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: imprimir tabla bruta y neta
+      - name: imprimir tabla de companias inglesas
         run:
           echo "tabla de empresa inglesas"
           cat companies_unites_kingdom.csv
